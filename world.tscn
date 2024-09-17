@@ -1,0 +1,52 @@
+[gd_scene load_steps=6 format=3 uid="uid://dt8ve11du640i"]
+
+[ext_resource type="Script" path="res://world.gd" id="1_d6cba"]
+[ext_resource type="Texture2D" uid="uid://0gc50ospaq28" path="res://Images/starry-night-sky-vector-37409.jpg" id="1_y68qb"]
+[ext_resource type="PackedScene" uid="uid://ddiwgnhlmscy5" path="res://plataforma.tscn" id="2_prvht"]
+[ext_resource type="PackedScene" uid="uid://bb0sty5cjl65a" path="res://player.tscn" id="3_fwex7"]
+[ext_resource type="Script" path="res://camera_2d.gd" id="3_py2pi"]
+
+[node name="World" type="Node"]
+script = ExtResource("1_d6cba")
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="Background" type="TextureRect" parent="ParallaxBackground"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_y68qb")
+expand_mode = 1
+metadata/_edit_use_anchors_ = true
+metadata/_edit_lock_ = true
+
+[node name="Score" type="Label" parent="ParallaxBackground"]
+anchors_preset = -1
+anchor_left = 0.0246914
+anchor_top = 0.0177778
+anchor_right = 0.257716
+anchor_bottom = 0.0788889
+theme_override_font_sizes/font_size = 40
+text = "Score: 0"
+metadata/_edit_use_anchors_ = true
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(328, 456)
+script = ExtResource("3_py2pi")
+
+[node name="Plataforma 1-4" parent="." instance=ExtResource("2_prvht")]
+position = Vector2(208, 768)
+
+[node name="Plataforma 2-4" parent="." instance=ExtResource("2_prvht")]
+position = Vector2(432, 632)
+
+[node name="Plataforma 3-4" parent="." instance=ExtResource("2_prvht")]
+position = Vector2(152, 400)
+
+[node name="Plataforma 4-4" parent="." instance=ExtResource("2_prvht")]
+position = Vector2(464, 176)
+
+[node name="Player" parent="." instance=ExtResource("3_fwex7")]
+position = Vector2(200, 672)
