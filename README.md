@@ -1,6 +1,7 @@
 # Fundamentos de Programación **Trabajo Práctico Individual**
 
-## ![][image1]
+## ![imagen](https://github.com/user-attachments/assets/50a3d507-7ccf-4891-a138-ad570711f237)
+
 
 # **Introducción**
 
